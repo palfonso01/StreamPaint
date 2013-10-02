@@ -4,31 +4,47 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = StreamPaint
 TEMPLATE = app
 
+include(../../QMapControl/QMapControl.pri)
+
+DEPENDPATH += . ../../QMapControl/src
+INCLUDEPATH += . ../../QMapControl/src
+INCLUDEPATH += . ../../QMapControl
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    ladybugwidget.cpp
+    ladybugwidget.cpp \
+    DObject.cpp
 
 HEADERS  += mainwindow.h \
-    ladybugwidget.h
+    ladybugwidget.h \
+    DObject.hpp
 
 FORMS    += mainwindow.ui
 
 
+###### Ladybug SDK  ##################
 INCLUDEPATH +="C:/Program Files (x86)/Point Grey Research/Ladybug/include"
-
 INCLUDEPATH +="C:/Program Files (x86)/Point Grey Research/Ladybug/bin"
 LADYBUG = "C:/Program Files (x86)/Point Grey Research/Ladybug/lib"
 LIBS+= -L$$LADYBUG/ -lLadybugGUI
 LIBS+= -L$$LADYBUG/ -lladybug
 
-FREEGLUT = "C:/freeglut-2.8.0/freeglut-2.8.0"
-INCLUDEPATH += $$FREEGLUT/include
-LIBS += -L$$FREEGLUT/src/.libs -lglut
+###### OpenCV  ###########################
+INCLUDEPATH +="C:/opencv/install/include"
+INCLUDEPATH +="C:/opencv/install/bin"
+LIBS+=-L"C:/opencv/install/lib" \
+       -lopencv_core240 \
+       -lopencv_features2d240 \
+       -lopencv_highgui240 \
+       -lopencv_imgproc240 \
+       -lopencv_objdetect240
+
+RESOURCES += \
+    LBWidget.qrc

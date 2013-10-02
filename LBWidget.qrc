@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/LWidget">
+        <file>select.png</file>
+        <file>open.png</file>
+        <file>forward.png</file>
+        <file>pause.png</file>
+        <file>play.png</file>
+        <file>rewind.png</file>
+        <file>stop.png</file>
+        <file>zoomin.png</file>
+        <file>zoomout.png</file>
+        <file>LRM.png</file>
+        <file>ladybug11501086.cal</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,15 @@
+QFile file("out.txt");
+    file.open(QIODevice::WriteOnly | QIODevice::Text);
+    QTextStream out(&file);
+    double dLadybugX, dLadybugY, dLadybugZ;
+
+    for(unsigned int i= 0; i< processedImage.uiCols; i++)
+    {
+
+        for(unsigned int j= 0; j< processedImage.uiRows; j++)
+        {
+            manualTranslation( context, 0,  i, j, 20.0, dLadybugX, dLadybugY, dLadybugZ );
+            out << dLadybugX<<" "<<dLadybugY<<" "<<dLadybugZ<<"\n";
+        }
+    }
+    file.close();

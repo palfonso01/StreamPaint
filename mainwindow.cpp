@@ -10,8 +10,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->gridLayout->removeItem(ui->gridLayout->itemAtPosition(0,0));
     ui->gridLayout->addWidget(lw,0,0,1,1);
     ui->gridLayout->addLayout(ui->horizontalLayout, 1,0,1,1);
-    connect(ui->openButton, SIGNAL(clicked()), lw, SLOT(SetFileName()));
-    connect(ui->playButton, SIGNAL(clicked()), lw, SLOT(StarCamera()));
 }
 
 MainWindow::~MainWindow()

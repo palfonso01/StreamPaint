@@ -31,20 +31,6 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="openButton">
-        <property name="text">
-         <string>Abrir</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="playButton">
-        <property name="text">
-         <string>Reproducir</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QPushButton" name="pushButton">
         <property name="text">
          <string>Cerrar</string>
